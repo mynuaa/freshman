@@ -1,16 +1,18 @@
 var aboutQSC = function() {
     $('#cover').fadeOut(800);
-    doc.section('特典', function() {
-        doc.subSection('求是潮');
+    doc.section('我们', function() {
+        doc.subSection('纸飞机');
     });
 }
-
 var fallback = function() {
     var ua = navigator.userAgent;
     if(ua.match(/Phone|Mob|Android|Touch/))
        window.location.href = './mobile/';
 }
 fallback();
+$("#show").click(function(){
+  $("p").show();
+});
 
 var Doc = function(md) {
 
@@ -32,14 +34,14 @@ var Doc = function(md) {
     this.nav = function() {
         var jq = $(html).filter('h1, h2');
         $('nav').html(jq);
-        $('nav').prepend('<div id="zju-logo"></div><div id="sidebar">新生手册</div><div id="nav-top">浙江大学<br><strong>新生手册</strong></div><hr>');
+        $('nav').prepend('<div id="zju-logo"></div><div id="sidebar">新生手册</div><div id="nav-top">南京航空航天大学<br><strong>新生手册</strong></div><hr>');
     };
 
     this.comment = function() {
         window.uyan_config = {
-            title:'求是潮新生手册',
-            su:'qsc-freshman',
-            url:'http://f.myqsc.com/'
+            title:'纸飞机新生手册',
+            su:'zfj-freshman',
+            url:'http://my.nuaa.edu.cn/'
         };
         $('article section#comments').append('<div id="uyan_frame"></div><script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1811609" async=""></script>');
     };
@@ -91,8 +93,9 @@ var Doc = function(md) {
                     var nextSection = $(this).nextAll('h1');
                     nextSection = nextSection.first().text();
                     if(nextSection) {
+                     
                         nextSection = $('<div id="next-chapter"><span>阅读下一章节</span><br></div>').append(nextSection);
-                        nextSection = $('<section class="next"></section>').append(nextSection);
+                        nextSection = $('<div class="next"><img src="./img/nuaa1.jpg" ><br></div>').append(nextSection);
                     }
 
                     $('article').html('<section class="cover"></div>');
@@ -170,7 +173,6 @@ var Doc = function(md) {
             }
         });
     };
-
     this.applyScrollBar = function(that) {
         var offset = $(that)[0].scrollHeight - $(that).height();
         if(offset <= 40) return;
@@ -235,6 +237,7 @@ var Doc = function(md) {
         } else {
             $('#prev').hide();
         }
+
         if($('section.current').nextAll('section').first().html() || $('nav h1.current').nextAll('h1').first().html()) {
             $('#next').show();
         } else {
@@ -243,17 +246,18 @@ var Doc = function(md) {
         $('#prev').is(':visible') ? $('#section-preface').hide() : $('#section-preface').show();
         $('#next').is(':visible') ? $('#prev').css({right: 80}) : $('#prev').css({right: 0});
         // 计算 #search的位置
-        var count = 0;
+       var count = 0;
         if ($('#prev').is(':visible')) {
             count++;
         }
         if ($('#next').is(':visible')) {
             count++;
         }
-        var offset = count * 80;
-        $('#search').css('right', offset);
-    }
 
+        var offset = count * 80;
+        $('#search').css('right', offset)
+        
+    }
     this.sectionReady(function(title) {
         that.img();
         setSectionPreface();
@@ -266,17 +270,20 @@ var Doc = function(md) {
             window.commentLoaded = true;
             that.comment();
         }
-        if(title == '搜索') {
-            $('article').html('<input type="text" id="search" placeholder="戳我以搜索">');
+
+         if(title =='搜索') {
+
+           $('article').html('<input type="text" id="search" placeholder="戳我以搜索">');
             doc.search('');
             $('#search').on('keyup', function() {
                 doc.search($(this).val());
             });
         }
-        window.currentSection = title;
+        window.currentSection = title; 
         loadPerfectScrollBar();
     });
 
+                        
     this.subSection = function(title) {
         title = title.replace(/ /g, '');
         var isSectionPreface = false;
@@ -337,7 +344,7 @@ var Doc = function(md) {
             subSection.append(jq.not('h2'));
 
             // 剩余操作
-            if (isEm) {
+           if (isEm) {
                 subSection.addClass('em');
             } else {
                 subSection.addClass('sub');
@@ -350,7 +357,7 @@ var Doc = function(md) {
             $('article section').remove();
             $('article').css('margin-left', 0);
             $('article').append(html);
-            $('article section').first().addClass('current');
+           $('article section').first().addClass('current');
             loadPerfectScrollBar();
             that.highlight(keyword);
             doc.testPrevAndNext();
@@ -368,13 +375,11 @@ var Doc = function(md) {
 
         display();
     };
-
-    this.updateUrl = function(url) {
+      this.updateUrl = function(url) {
         url = window.baseUrl + url;
-        window.history.pushState("求是潮新生手册", "求是潮新生手册", url);
+        window.history.pushState("纸飞机新生手册", "纸飞机新生手册", url);
         sessionStorage.setItem('url', JSON.stringify({url: url, timestamp: new Date().getTime()}));
     };
-
     this.applyUrl = function(url) {
         if(!url) {
             url = decodeURIComponent(window.location.href);
@@ -386,7 +391,7 @@ var Doc = function(md) {
     };
 
     // path is something like ["学习", "选课入门"]
-    this.applyPath = function(path) {
+  this.applyPath = function(path) {
         if(path[0]) {
             $('#cover').hide();
             that.section(path[0], function() {
@@ -407,7 +412,7 @@ var Doc = function(md) {
         }
     };
 
-    this.img = function() {
+   this.img = function() {
         $('img[alt="background"]').each(function() {
             // cacl the corret height and width to set
             var callback = (function(that) {
