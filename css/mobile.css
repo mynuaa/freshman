@@ -1,6 +1,6 @@
 h1,h2,em{font-style:normal;}
 
-body{color:#555;font-size:18px;padding:2em;line-height: 25px;
+body{color:#555;font-size:15px;padding:2em;line-height: 25px;
  }
  body a{color:#333;}
 #top{
@@ -13,10 +13,10 @@ body{color:#555;font-size:18px;padding:2em;line-height: 25px;
 	text-decoration: none;list-style-type: none;
 }
 h1{
-	font-size: 25px;color: #5F9EA0;
+	font-size: 20px;color: #5F9EA0;
 }
 h2{
-	padding-left: 20px;font-size: 20px;
+	padding-left: 20px;font-size: 18px;
 }
 #cover{
  position: fixed;
