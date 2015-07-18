@@ -25,7 +25,7 @@ var init = function() {
             var text = $(this).text();
             $('#content h1, #content h2').each(function() {
                 if($(this).text() == text) {
-                    var y = $(this).offset().top - 20;
+                    var y = $(this).offset().top - 40;
                     window.scrollTo(0, y);
                 }
             });
@@ -38,6 +38,13 @@ $(document).ready(function(){
     $("#cover").remove();
   });
 });
+$(document).ready(function(){
+  $("#open-sb").click(function(){
+    $("#cover").remove();
+  });
+});
+
+
 $(document).ready(function(e) {
     //页面滚动事件
     init();

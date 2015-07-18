@@ -284,24 +284,24 @@ var Doc = function(md) {
     });
 
                         
-    this.subSection = function(title) {
-        title = title.replace(/ /g, '');
+  this.subSection = function(title) {
+         title = title.replace(/ /g, '');
         var isSectionPreface = false;
-        $('nav h1').each(function() {
+       $('nav h1').each(function() {
             if(title.replace(/篇/g, '') == $(this).text().replace(/ /g, '')) {
                 isSectionPreface = true;
             }
-        });
-        if(!isSectionPreface)
+        }); 
+         if(!isSectionPreface)
           that.updateUrl('#!/'+window.currentSection+'/'+title);
-        $('nav h2').each(function() {
-            if(title == $(this).text().replace(/ /g, '')) {
+       $('nav h2').each(function() {
+          if(title == $(this).text().replace(/ /g, '')) {
                 $('nav h2.current').removeClass('current');
                 $(this).addClass('current');
             }
         });
-        var offsetLeft = 0;
-        $('article section').each(function() {
+         var offsetLeft = 0;
+      $('article section').each(function() {
             if(title == $(this).find('h2').first().text().replace(/ /g, '')) {
                 $('article section.current').removeClass('current');
                 $(this).addClass('current');
