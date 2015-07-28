@@ -34,12 +34,7 @@ var init = function() {
 
 };
 $(document).ready(function(){
-  $("#cover").click(function(){
-    $("#cover").remove();
-  });
-});
-$(document).ready(function(){
-  $("#open-sb").click(function(){
+  $("#cover,#open-sb").click(function(){
     $("#cover").remove();
   });
 });
