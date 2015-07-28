@@ -91,7 +91,6 @@ $(document).ready(function(){
   $("#open-sb").click(function(){
   $(".toolbar").toggle();
    });
-  
 });
 
  
