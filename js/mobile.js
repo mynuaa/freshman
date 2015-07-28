@@ -37,8 +37,6 @@ $(document).ready(function(){
   $("#cover").click(function(){
     $("#cover").remove();
   });
-});
-$(document).ready(function(){
   $("#open-sb").click(function(){
     $("#cover").remove();
   });
@@ -86,21 +84,14 @@ $( document ).ready(function() {
         }
          });
 
-  });  
-$(document).ready(function(){
-  $("#open-sb").click(function(){
-  $(".toolbar").toggle();
-   });
-});
+  });
 
- 
-
-$(".sidebar dt").css({"background-color":""});
+$(".sidebar dt").css({"background":""});
 $(function(){
     $(".sidebar dd").hide();
     $(".sidebar dt").click(function(){
-        $(".sidebar dt").css({"background-color":""})
-        $(this).css({"background-color": "#00CED1"});
+        $(".sidebar dt").css({"background": ""});
+        $(this).css({"background": "#00CED1"});
         $(this).parent().find('dd').removeClass("menu_chioce");
     
         $(".menu_chioce").slideUp(); 

@@ -3,7 +3,7 @@
 (function( $ ) {
 	$.fn.simpleSidebar = function( options ) {
 		//declaring all global variables
-		var sbw, align, callbackA, callbackB,
+		// var sbw, align, callbackA, callbackB,
 			//allowing user customisation
 			defaults  = {
 				settings: {
@@ -109,13 +109,14 @@
 			var nsbw = $sidebar.width();
 			
 			$elements.each(function() {
+				callbackA();
 				$( this ).animate({
 					marginLeft: '+=' + nsbw,
 					marginRight: '-=' + nsbw
 				}, {
 					duration: duration,
 					easing: easing,
-					complete: callbackA
+					// complete: callbackA
 				});
 			});
 		},
@@ -124,13 +125,14 @@
 				var nsbw = $sidebar.width();
 				
 				$elements.each(function() {
+					callbackB();
 					$( this ).animate({
 						marginLeft: '-=' + nsbw,
 						marginRight: '+=' + nsbw
 					}, {
 						duration: duration,
 						easing: easing,
-						complete: callbackB
+						// complete: callbackB
 					});
 				});
 			},
