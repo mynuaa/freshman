@@ -11,7 +11,8 @@
     -o-transition: all @time linear;
 }
 
-* {
+* { user-select:none;
+     
     transition: color .3s linear;
     -moz-transition: color .3s linear;
     -webkit-transition: color .3s linear;
@@ -33,18 +34,20 @@
     font-family: "Source Code Pro", "Ubuntu Mono", FreeMono;
 }
 
-
 body, html, ul, ol, li, nav, article, h1, h2, h3 {
     padding: 0;
     margin: 0;
     color: #555;
     .font-hei;
+   
 }
 
 
-h1, h2, h3 {
-    cursor: pointer;
+h1,h2,h3{
+cursor: pointer;
 }
+
+    
 
 ul, ol, li {
     list-style: none;
@@ -54,10 +57,9 @@ a {
     color: #777;
 }
 
-#zju-logo, #sidebar, #nav-top {
+/*#zju-logo, #sidebar, #nav-top {
     cursor: pointer;
-}
-
+}*/
 #cover {
     background: #fff url(../img/cover0.jpg);
     background-size: cover;
@@ -69,7 +71,7 @@ a {
     z-index: 20000;
     overflow: hidden;
     #start-reading {
-        cursor: pointer;
+        //cursor: pointer;
         position: fixed;
         top: 50%;
         height: 80px;
@@ -101,7 +103,7 @@ a {
         top: 0px;
         width: 200px;
         height: 500px;
-        background: url(../img/icons/zju.png) center 50px no-repeat;
+        background: url(../img/icons/nuaa.png) center 50px no-repeat;
         padding-top: 100px;
         h1 {
             color: #fff;
@@ -119,7 +121,7 @@ a {
         bottom: 0;
         overflow: hidden;
         max-height: 30px;
-        //.transition(.3s);
+        .transition(.3s);
         li {
             padding: 0;
             color: #eee;
@@ -135,7 +137,7 @@ a {
             }
             float: left;
             display: block;
-            margin: 0 20px;
+            margin: 0 70px;
             padding-left: 50px;
             @width: ~"25% - 90px";
             width: calc(@width);
@@ -143,7 +145,7 @@ a {
             width: -moz-calc(@width);
             background: transparent left top no-repeat;
             &:nth-child(1) {
-                background-image: url(../img/icons/icon_b_1.png);
+                background-image: url(../img/icons/zfj1.png);
             }
             &:nth-child(2) {
                 background-image: url(../img/icons/icon_b_2.png);
@@ -156,23 +158,43 @@ a {
             }
         }
         &:hover {
-            //.transition(.3s);
+            .transition(.3s);
             max-height: none;
         }
     }
 }
+  .next {
+    color: @theme;
+   cursor: pointer;
+             #next-chapter {
+      
+             margin-top: 30px;
+                line-height: 60px;
+                font-size: 60px;
+                span {
+                    font-size: 28px;
+                    color: #ccc;
+                }
+            }
 
+        }
 body {
     overflow: hidden;
+    // cursor: url(../img/logo0.cur), pointer;
+    cursor: pointer;
+
 }
+
+
 
 :focus {
     outline: none;
 }
+
 nav {
     padding-top: 36px;
     height: 100%;
-    background: @theme url(../img/icons/icon_b_0.png) no-repeat center 90%;
+    background: @theme url(../img/icons/zfj1.png) no-repeat center 94%;
     position: fixed;
     top: 0;
     text-align: center;
@@ -182,10 +204,14 @@ nav {
     -moz-transition: width .5s linear;
     -webkit-transition: width .5s linear;
     -o-transition: width .5s linear;
+    overflow: hidden;
 
     h1, h2 {
         font-weight: normal;
         opacity: 0;
+        &:hover {
+            text-shadow: 0 0 5px #333;
+        }
     }
     hr {
         display: block;
@@ -206,7 +232,7 @@ nav {
         opacity: 0;
         .transition(.2s);
         font-size: 13px;
-        letter-spacing: 5px;
+        white-space: nowrap;
         padding-left: 5px;
         strong {
             font-size: 18px;
@@ -234,11 +260,11 @@ nav {
     }
     #zju-logo {
         height: 50px;
-        background: url(../img/icons/zju.png) center top no-repeat;
+        background: url(../img/icons/nuaa.png) center top no-repeat;
     }
     #sidebar {
         .transition(.8s);
-        position: fixed;
+        position: absolute;
         top: 40px;
         left: 0px;
         z-index: 2001;
@@ -247,13 +273,16 @@ nav {
         font-size: 15px;
         width: 18px;
         opacity: 1;
-        padding: 50px (60 - 18)/2px;
+        padding: 50px 0;
         line-height: 21px;
+        width: 100%;
     }
     h1, h2 {
         margin: 0;
+        white-space: nowrap;
         em {
             font-style: normal;
+            font-weight: lighter;
         }
     }
     h1 {
@@ -296,7 +325,6 @@ article {
     -moz-transition: left .5s linear;
     -webkit-transition: left .5s linear;
     -o-transition: left .5s linear;
-    
     div{
         word-break:break-all;
     }    
@@ -323,6 +351,8 @@ article {
     }
     section {
         // hide scrollbar x
+ 
+
         .sub-header {
             font-weight: bold;
             line-height: 1em;
@@ -332,7 +362,9 @@ article {
         .ps-scrollbar-x {
             display: none;
         }
+
         background: fade(@theme, 5%);
+        background-size: cover !important;
         float: left;
         width: 300px - 20px*2;
         padding: 0 20px;
@@ -445,7 +477,7 @@ article {
             }
         }
         &.current {
-            //background: fade(@theme, 3%);
+            background: fade(@theme, 3%);
         }
         &:hover {
             background-color: fade(@theme, 3%) ! important;
@@ -456,20 +488,21 @@ article {
             padding-bottom: 0;
             margin-top: 0;
             cursor: pointer;
-            #next-chapter {
-                height: 200px;
+             #next-chapter {
+               height: 200px;
                 position: absolute;
-                top: 50%;
+                top:50%;
                 line-height: 60px;
                 font-size: 60px;
                 margin: 0;
                 padding: 0;
-                margin-top: -80px;
+              margin-top: -80px;
                 span {
                     font-size: 28px;
                     color: #ccc;
                 }
             }
+
         }
         #section-preface {
             cursor: pointer;
@@ -500,15 +533,16 @@ article {
                 font-size: 12px;
                 color: #fff;
                 display: inline-block;
-            }
-        }
-    }
+            } 
+        }     
+    }          
 }
-#prev, #next {
+
+#prev,#next{
     position: fixed;
-    top: 50%;
-    width: 80px;
     margin-top: -40px;
+    width: 80px;
+    top: 50%;
     height: 80px;
     right: 0;
     color: #fff;
@@ -522,10 +556,7 @@ article {
         background: @theme;
     }
 }
-#prev {
-    border-right: 1px solid #fff;
-    right: 80px;
-}
+
 #logo {
     margin-bottom: 20px;
     height: 80px;
@@ -563,12 +594,13 @@ article {
         }
     }
 }
+
 #search {
     position: fixed;
     z-index: 10000;
     top: 50%;
     margin-top: -40px;
-    right: 160px;
+    right: 80px;
     display: block;
     border: none;
     line-height: 26px;
@@ -585,5 +617,5 @@ article {
         font-family: FontAwesome;
         content: "\f002";
         display: block;
-    }
+    }       
 }
