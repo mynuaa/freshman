@@ -180,8 +180,8 @@ a {
         }
 body {
     overflow: hidden;
- cursor: url(../img/logo0.cur), pointer;
-
+    // cursor: url(../img/logo0.cur), pointer;
+    cursor: pointer;
 
 }
 
@@ -204,11 +204,14 @@ nav {
     -moz-transition: width .5s linear;
     -webkit-transition: width .5s linear;
     -o-transition: width .5s linear;
-
+    overflow: hidden;
 
     h1, h2 {
         font-weight: normal;
         opacity: 0;
+        &:hover {
+            text-shadow: 0 0 5px #333;
+        }
     }
     hr {
         display: block;
@@ -229,7 +232,7 @@ nav {
         opacity: 0;
         .transition(.2s);
         font-size: 13px;
-        letter-spacing: 5px;
+        white-space: nowrap;
         padding-left: 5px;
         strong {
             font-size: 18px;
@@ -275,6 +278,7 @@ nav {
     }
     h1, h2 {
         margin: 0;
+        white-space: nowrap;
         em {
             font-style: normal;
         }
