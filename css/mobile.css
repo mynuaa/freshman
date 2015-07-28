@@ -150,10 +150,5 @@ dd h2 {
 }
 
 #content h1 {
-	border-bottom: 1px dotted #BBB;
-	padding-bottom: 0.2em;
-}
-
-#content p {
-	text-indent: 2em;
+	text-align: center;
 }
