@@ -264,7 +264,7 @@ nav {
     }
     #sidebar {
         .transition(.8s);
-        position: fixed;
+        position: absolute;
         top: 40px;
         left: 0px;
         z-index: 2001;
@@ -273,14 +273,16 @@ nav {
         font-size: 15px;
         width: 18px;
         opacity: 1;
-        padding: 50px (60 - 18)/2px;
+        padding: 50px 0;
         line-height: 21px;
+        width: 100%;
     }
     h1, h2 {
         margin: 0;
         white-space: nowrap;
         em {
             font-style: normal;
+            font-weight: lighter;
         }
     }
     h1 {
@@ -362,6 +364,7 @@ article {
         }
 
         background: fade(@theme, 5%);
+        background-size: cover !important;
         float: left;
         width: 300px - 20px*2;
         padding: 0 20px;
@@ -537,9 +540,9 @@ article {
 
 #prev,#next{
     position: fixed;
-   margin-top: -40px;
+    margin-top: -40px;
     width: 80px;
-     top: 50%;
+    top: 50%;
     height: 80px;
     right: 0;
     color: #fff;
@@ -553,10 +556,6 @@ article {
         background: @theme;
     }
 }
-#prev{
-    border-right: 1px solid #fff;
-}
-
 
 #logo {
     margin-bottom: 20px;

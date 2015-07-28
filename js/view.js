@@ -34,7 +34,7 @@ var Doc = function(md) {
     this.nav = function() {
         var jq = $(html).filter('h1, h2');
         $('nav').html(jq);
-        $('nav').prepend('<div id="zju-logo"></div><div id="sidebar">新生手册</div><div id="nav-top">南京航空航天大学<br><strong>新生手册</strong></div><hr>');
+        $('nav').prepend('<div id="zju-logo"></div><div id="sidebar">新<br>生<br>手<br>册</div><div id="nav-top">南京航空航天大学<br><strong>新生手册</strong></div><hr>');
     };
 
     this.comment = function() {
