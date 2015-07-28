@@ -35,7 +35,9 @@ var init = function() {
 };
 $(document).ready(function(){
   $("#cover,#open-sb").click(function(){
-    $("#cover").remove();
+    $("#cover").fadeOut(1000, function(){
+        $("#cover").remove();
+    });
   });
 });
 
