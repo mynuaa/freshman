@@ -95,7 +95,7 @@ var Doc = function(md) {
                     if(nextSection) {
                      
                         nextSection = $('<div id="next-chapter"><span>阅读下一章节</span><br></div>').append(nextSection);
-                        nextSection = $('<div class="next"><img src="./img/nuaa1.jpg" ><br></div>').append(nextSection);
+                        nextSection = $('<div class="next"><img src="./img/nuaa1.jpg"><br></div>').append(nextSection);
                     }
 
                     $('article').html('<section class="cover"></div>');
@@ -683,3 +683,4 @@ $(document).ready(function() {
         doc.applyUrl();
     });
 });
+ 
