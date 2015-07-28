@@ -17,19 +17,22 @@ h2{
 	/*padding-left: 20px;*/
   font-size: 17px;
 }
-#cover{
- position: fixed;
- width: 100%;
- height: 100%;
- top:0;
- left: 0;
- left: 0;z-index: 10;
+#cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  left: 0;
+  z-index: 15;
 }
+
 .toolbar {
  position: fixed;
  background-color: #5F9EA0;
  width: 100%;
  height: 40px;
+ line-height: 40px;
  top: 0;
  text-align: center;
  left: 0;
@@ -39,12 +42,12 @@ color: white;
 
  }
 
- .toolbar #img{
-width:32px;
-height:32px;
-vertical-align:text-bottom;
+#img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
 
- }
 menu-button {
   position: relative;
   margin: 5px;
@@ -52,19 +55,20 @@ menu-button {
   width: 36px;
   cursor: pointer;
 }
-.menu-button:before {
-   content: "";
-    position:fixed;
-   border-bottom: 17px double #008B8B;
-    border-top: 6px solid #008B8B;
-    width: 30px;
-    height: 5px;
-    left: 3px;
-    top: 5px;
-    opacity: 0.8;
-z-index: 10;
 
+.menu-button:before {
+  content: "";
+  position: fixed;
+  top: 11px;
+  left: 15px;
+  width: 20px;
+  height: 4px;
+  border-top: 3px solid #FFF;
+  border-bottom: 10px double #FFF;
+  opacity: 0.8;
+  z-index: 10;
 }
+
 .menu-left {
  margin-right: 1.5em;
   float: left; 
@@ -73,26 +77,23 @@ z-index: 10;
 
 
 .sidebar {
-z-index: 0;
-    padding-top: 4em;
-    color: white;
-   position: fixed;
-    background-color: #20B2AA;
-   /* opacity: 0.9;*/
-    height: 100%;
+  z-index: 0;
+  color: white;
+  position: fixed;
+  background-color: #20B2AA;
+  opacity: 0.9;
+  height: 100%;
   overflow: auto;
 }
 
 .sidebar dt {
-   padding: 0 1.5em;
-    line-height:25px;
-    font-size: 20px;
-    text-align: center;
-
+  padding: 0.2em;
+  line-height: 25px;
+  font-size: 20px;
+  text-align: center;
 }
-
-dl dt h1{
-	font-size: 18px;
+dl dt h1 {
+  font-size: 18px;
   color: white;
 }
 dd {
@@ -100,10 +101,11 @@ dd {
   margin: 0;
   text-align: center;
 }
-dd h2{
-	font-size: 16px;
+dd h2 {
+  font-size: 16px;
+  font-weight: lighter;
   line-height:25px;
   color:#480000;
-  margin: 0.5em 0;
+  margin: 0.2em 0;
   padding: 0;
 }

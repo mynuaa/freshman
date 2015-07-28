@@ -9,11 +9,11 @@
 				settings: {
 					opener: undefined,
 					wrapper: undefined, //HTML tag is not safe. Please, use a container/wrapper div
-					ignore: undefined,
+					ignore: ".toolbar, #top",
 					data: 'ssbplugin',
 					animation: {
 						duration: 500, //milliseconds (0.5s = 500ms)
-						easing: 'swing'
+						easing: 'easeout'
 					}
 				},
 				sidebar: {
