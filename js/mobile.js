@@ -4,7 +4,7 @@ var comment = function() {
         su:'zfj-freshman',
         url:'http://my.nuaa.edu.cn/'
     };
-    $('#content').append('<div id="uyan_frame"></div><script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1811609" async=""></script>');
+    $('#content').append('<div id="uyan_frame"></div><script id="UYScript" src="http://v2.uyan.cc/code/uyan.js?uid=2051019" async=""></script>');
 }
 var init = function() {
     $.get('../markdown/freshman.md', function(data) {
