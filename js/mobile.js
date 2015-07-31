@@ -78,7 +78,7 @@ $( document ).ready(function() {
         },
         sidebar: {
             align: 'left',
-            width:190,
+            width:170,
            closingLinks: 'a',
         }
          });
