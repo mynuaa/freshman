@@ -43,7 +43,7 @@ var Doc = function(md) {
             su:'zfj-freshman',
             url:'http://my.nuaa.edu.cn/'
         };
-        $('article section#comments').append('<div id="uyan_frame"></div><script id="UYScript" src="http://v2.uyan.cc/code/uyan.js?uid=2051019" async=""></script>');
+        $('article section#comments').append('<div id="uyan_frame"></div><script id="UYScript" src="http://v2.uyan.cc/code/uyan.js?uid=2051871" async=""></script>');
     };
 
     this.section = function(title, callback) {
