@@ -1061,7 +1061,6 @@
 ![cover](img/6.1.jpg)
 ![cover](img/6.2.jpg)
 ![cover](img/6.4.jpg)
-![cover](img/6.5.jpg)
 
 
 那一瞥
