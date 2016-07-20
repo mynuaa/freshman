@@ -1375,6 +1375,10 @@ We Want To Fly！
 
 
 ![cover](img/8.1.jpg)
+![cover](img/8.3.jpg)
+![cover](img/8.4.jpg)
+![cover](img/8.5.jpg)
+![cover](img/8.6.jpg)
 
 
 ## *南航纸飞机* 
@@ -1459,17 +1463,25 @@ We Want To Fly！
 
 ###Document
 
-ID = harrywang7
+ID = fuss
 
-ID = 想飞翔的波波
+ID = 多啦A帅
 
-ID = 项鹏建
+ID = 不给吃的小夜宵
 
-ID = 像清水趁早
+ID = 刘璇Vanessa 
 
-ID = 张君宜
+ID = Dyrad
 
-ID = 晓龙233
+ID = laigq2015
+
+ID = 亚太经合组织
+
+ID = 泽,,,
+
+ID = 特务
+
+ID = 晓枫
 
 ###页面设计
 
