@@ -1455,6 +1455,8 @@ We Want To Fly！
 
 *邮政编码*：211100
 
+*微信*：nuaazfj/南航纸飞机
+
 *网址*：[my.nuaa.edu.cn](http://my.nuaa.edu.cn/)
 ![image](img/weixin.jpg)
 

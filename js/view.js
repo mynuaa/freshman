@@ -94,7 +94,7 @@ var Doc = function(md) {
                     nextSection = nextSection.first().text();
                     if(nextSection) {
                      
-                        nextSection = $('<div id="next-chapter"><span>阅读下一章节</span><br></div>').append(nextSection);
+                        nextSection = $('<section id="next-chapter"><span>阅读下一章节</span><br></section>').append(nextSection);
                         nextSection = $('<div class="next"><img src="./img/nuaa1.jpg"><br></div>').append(nextSection);
                     }
 
