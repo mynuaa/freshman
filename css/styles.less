@@ -1,9 +1,7 @@
 @import 'perfect-scrollbar';
 @import 'lib';
-
 @theme: #ff9078;
 
-// css3类
 .transition(@time) {
     transition: all @time linear;
     -moz-transition: all @time linear;
@@ -11,8 +9,8 @@
     -o-transition: all @time linear;
 }
 
-* { user-select:none;
-     
+* {
+    user-select: none;
     transition: color .3s linear;
     -moz-transition: color .3s linear;
     -webkit-transition: color .3s linear;
@@ -21,35 +19,35 @@
     -webkit-transition: background-color .5s linear;
 }
 
-.font-hei() {
-    font-family: "Hiragino Sans GB", "ST Heiti", "LiHei Pro Medium", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei";
-}
-.font-song() {
-    font-family: "NSimSun", "STSong", "AR PL SungtiL GB", "TW\-Sung", "SimSun";
-}
-.font-kai() {
-    font-family: "STKaiti", "KaiTi", "AR PL KaitiM GB", "TW\-Kai";
-}
-.font-code() {
-    font-family: "Source Code Pro", "Ubuntu Mono", FreeMono;
+.font-main() {
+    font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei UI", "微软雅黑", sans-serif;
 }
 
-body, html, ul, ol, li, nav, article, h1, h2, h3 {
+body,
+html,
+ul,
+ol,
+li,
+nav,
+article,
+h1,
+h2,
+h3 {
     padding: 0;
     margin: 0;
     color: #555;
-    .font-hei;
-   
+    .font-main;
 }
 
-
-h1,h2,h3{
-cursor: pointer;
+h1,
+h2,
+h3 {
+    cursor: pointer;
 }
 
-    
-
-ul, ol, li {
+ul,
+ol,
+li {
     list-style: none;
 }
 
@@ -57,11 +55,8 @@ a {
     color: #777;
 }
 
-/*#zju-logo, #sidebar, #nav-top {
-    cursor: pointer;
-}*/
 #cover {
-    background: #fff url(../img/cover0.jpg);
+    background: #fff url(../img/cover0.jpg) top center;
     background-size: cover;
     position: fixed;
     top: -10%;
@@ -71,7 +66,6 @@ a {
     z-index: 20000;
     overflow: hidden;
     #start-reading {
-        //cursor: pointer;
         position: fixed;
         top: 50%;
         height: 80px;
@@ -163,28 +157,42 @@ a {
         }
     }
 }
-  .next {
-    color: @theme;
-   cursor: pointer;
-             #next-chapter {
-      
-             margin-top: 30px;
-                line-height: 60px;
-                font-size: 60px;
-               
-               padding-left:50px;
-                span {
-                    font-size: 28px;
-                    color: #ccc;
-                }
-            }
 
+.next {
+    position: relative;
+    width: 320px;
+    height: 100%;
+    overflow: hidden;
+    color: @theme;
+    cursor: pointer;
+    #next-chapter {
+        width: 100%;
+        box-sizing: border-box;
+        line-height: 60px;
+        font-size: 60px;
+        padding: 0 40px;
+        height: auto;
+        padding-bottom: 30px;
+        background: transparent;
+        border-right: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        & > img {
+            float: left;
+            max-width: 100%;
+            margin: 20px 0;
         }
+        span {
+            font-size: 28px;
+            color: #ccc;
+        }
+    }
+}
+
 body {
     overflow: hidden;
-    // cursor: url(../img/logo0.cur), pointer;
     cursor: pointer;
-
 }
 
 :focus {
@@ -205,8 +213,8 @@ nav {
     -webkit-transition: width .5s linear;
     -o-transition: width .5s linear;
     overflow: hidden;
-
-    h1, h2 {
+    h1,
+    h2 {
         font-weight: normal;
         opacity: 0;
         &:hover {
@@ -247,7 +255,8 @@ nav {
             .transition(.5s);
             opacity: 1;
         }
-        h1, h2 {
+        h1,
+        h2 {
             transition: opacity .8s linear;
             -moz-transition: opacity .8s linear;
             -webkit-transition: opacity .8s linear;
@@ -277,7 +286,8 @@ nav {
         line-height: 21px;
         width: 100%;
     }
-    h1, h2 {
+    h1,
+    h2 {
         margin: 0;
         white-space: nowrap;
         em {
@@ -309,6 +319,7 @@ nav {
         }
     }
 }
+
 article {
     position: absolute;
     left: 60px;
@@ -320,14 +331,13 @@ article {
     font-size: 14px;
     text-align: left;
     width: 10000px;
-
     transition: left .5s linear;
     -moz-transition: left .5s linear;
     -webkit-transition: left .5s linear;
     -o-transition: left .5s linear;
-    div{
-        word-break:break-all;
-    }    
+    div {
+        word-break: break-all;
+    }
     em {
         color: @theme;
     }
@@ -350,9 +360,6 @@ article {
         padding-top: 16px;
     }
     section {
-        // hide scrollbar x
- 
-
         .sub-header {
             font-weight: bold;
             line-height: 1em;
@@ -362,7 +369,6 @@ article {
         .ps-scrollbar-x {
             display: none;
         }
-
         background: fade(@theme, 5%);
         background-size: cover !important;
         float: left;
@@ -386,7 +392,8 @@ article {
             width: 600px;
         }
         &.em {
-            h2 + p, .sub-header + p {
+            h2+p,
+            .sub-header+p {
                 margin-top: 2em;
                 padding-top: 2em;
                 border-top: 1px solid rgba(0, 0, 0, .05);
@@ -401,7 +408,6 @@ article {
             p {
                 text-indent: 2em;
             }
-
         }
         &.sub {
             h2 {
@@ -435,12 +441,14 @@ article {
                 list-style: decimal;
             }
             p {
-                text-indent: 0 ! important; 
+                text-indent: 0 ! important;
                 padding-bottom: 0 ! important;
             }
         }
         &#comment {
-            h1, h2, h3 {
+            h1,
+            h2,
+            h3 {
                 display: none;
             }
         }
@@ -452,7 +460,8 @@ article {
         &.background {
             padding: 0;
             margin: 0;
-            h1, h2 {
+            h1,
+            h2 {
                 display: none;
             }
             p {
@@ -464,14 +473,14 @@ article {
             background-size: cover;
             background-position: left bottom;
             overflow: hidden;
-            .mask { // 遮罩层，用于伪造动画
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    margin-left: -20px;
-                    z-index: 10;
-                    background: #fff;
-                  }
+            .mask {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                margin-left: -20px;
+                z-index: 10;
+                background: #fff;
+            }
             img {
                 display: none;
             }
@@ -482,21 +491,19 @@ article {
             padding-bottom: 0;
             margin-top: 0;
             cursor: pointer;
-             #next-chapter {
-               height: 200px;
+            #next-chapter {
                 position: absolute;
-                top:50%;
+                top: 50%;
+                height: 200px;
                 line-height: 60px;
-                font-size: 60px;
-                margin: 0;
+                margin: -80px 0 0;
                 padding: 0;
-                margin-top: -80px;
+                font-size: 60px;
                 span {
                     font-size: 28px;
                     color: #ccc;
                 }
             }
-
         }
         #section-preface {
             cursor: pointer;
@@ -527,12 +534,13 @@ article {
                 font-size: 12px;
                 color: #fff;
                 display: inline-block;
-            } 
-        }     
-    }          
+            }
+        }
+    }
 }
 
-#prev,#next{
+#prev,
+#next {
     position: fixed;
     margin-top: -40px;
     width: 80px;
@@ -561,20 +569,17 @@ article {
     }
 }
 
-
 .highlight {
     background-color: yellow;
     transition: background-color 1s linear;
 }
-
 
 .hide-elem {
     padding-bottom: 1em;
     .hide-elem-content {
         display: none;
         font-size: 12px;
-        padding-left: 14px;
-        // border-left: 5px solid #f2f2f2;
+        padding-left: 14px; // border-left: 5px solid #f2f2f2;
     }
     .hide-elem-title {
         border-bottom: 1px dashed #8a8a8a;
@@ -611,5 +616,5 @@ article {
         font-family: FontAwesome;
         content: "\f002";
         display: block;
-    }       
+    }
 }
