@@ -6,7 +6,7 @@ var aboutQSC = function() {
 }
 var fallback = function() {
     var ua = navigator.userAgent;
-    if(ua.match(/Phone|Mob|Android|Touch/))
+    if(ua.match(/Phone|Mob|Android|Touch/i))
        window.location.href = './mobile/';
 }
 fallback();
@@ -93,9 +93,8 @@ var Doc = function(md) {
                     var nextSection = $(this).nextAll('h1');
                     nextSection = nextSection.first().text();
                     if(nextSection) {
-                     
                         nextSection = $('<section id="next-chapter"><span>阅读下一章节</span><br></section>').append(nextSection);
-                        nextSection = $('<div class="next"><img src="./img/nuaa1.jpg"><br></div>').append(nextSection);
+                        nextSection = $('<div class="next"></div>').append(nextSection);
                     }
 
                     $('article').html('<section class="cover"></div>');
